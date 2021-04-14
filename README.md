@@ -1,11 +1,10 @@
 # meetingroom_front
 
-> A Vue.js project
+vue 
+element-ui组件
 
-## Build Setup
+会议室管理系统前端页面
 
-``` bash
-# install dependencies
 npm install
 
 # serve with hot reload at localhost:8080
