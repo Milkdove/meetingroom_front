@@ -10,7 +10,11 @@ import axios from 'axios'
 // import '@/plugins/element'
 // axios.defaults.baseURL = 'http://localhost:4000/'
 
-axios.defaults.baseURL = 'http://rap2api.taobao.org/app/mock/data/'
+axios.defaults.baseURL = 'http://rap2api.taobao.org/app/mock/281419/'
+axios.interceptors.request.use(config => {
+  config.headers.Authorization = window.sessionStorage.getItem('token')
+  return config
+})
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);

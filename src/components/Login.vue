@@ -73,13 +73,14 @@ export default {
     login(formName) {
       this.$refs[formName].validate(async (valid) => {
         if (!valid) return;
-        const result = await this.$http.post("1937228", this.loginForm);
+        const { data: res } = await this.$http.post(
+          "/post/login",
+          this.loginForm
+        );
         // const { data: res } = await this.$http.post("login", this.loginForm);
-        if (result.status !== 200)
-          return this.$message.error("登陆失败！请重试");
+        if (res.status !== 200) return this.$message.error("登陆失败！请重试");
         this.$message.success("登陆成功！欢迎访问");
-        console.log(result);
-        window.sessionStorage.setItem("token", result.data.token);
+        window.sessionStorage.setItem("token", res.token);
         this.$router.push("/home");
       });
     },
