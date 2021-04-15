@@ -1,5 +1,5 @@
 <template>
   <div>
-    <h1>myinfo</h1>
+    <h1>用户申请</h1>
   </div>
 </template>

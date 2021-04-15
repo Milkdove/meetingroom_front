@@ -29,7 +29,10 @@
           ></el-input>
         </el-form-item>
         <el-form-item class="btns">
-          <el-button @click="login('loginFormRef')" type="primary"
+          <el-button
+            :loading="loading"
+            @click="login('loginFormRef')"
+            type="primary"
             >登录</el-button
           >
           <el-button @click="resetForm('loginFormRef')" type="info"
@@ -46,6 +49,7 @@ export default {
   data() {
     return {
       // 登录表单数据绑定对象
+      loading: false,
       loginForm: {
         username: "",
         password: "",
@@ -78,9 +82,10 @@ export default {
           this.loginForm
         );
         // const { data: res } = await this.$http.post("login", this.loginForm);
-        if (res.status !== 200) return this.$message.error("登陆失败！请重试");
+        if (res.meta.status !== 200)
+          return this.$message.error("登陆失败！请重试");
         this.$message.success("登陆成功！欢迎访问");
-        window.sessionStorage.setItem("token", res.token);
+        window.sessionStorage.setItem("token", res.data.token);
         this.$router.push("/home");
       });
     },
