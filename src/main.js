@@ -10,6 +10,7 @@ import axios from 'axios'
 import "babel-polyfill"
 
 // import '@/plugins/element'
+// axios.defaults.baseURL = 'http://121.36.213.66:8080/'
 axios.defaults.baseURL = 'http://localhost:8080/'
 axios.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
 

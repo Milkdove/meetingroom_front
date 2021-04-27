@@ -193,6 +193,9 @@ export default {
             trigger: ["blur", "change"],
           },
         ],
+        room_type: [
+          { required: true, message: "请输入会议室类型", triiger: "blur" },
+        ],
         room_size: [
           { required: true, message: "请输入可容纳人数", trigger: "blur" },
           {
@@ -259,6 +262,8 @@ export default {
     },
     addDialogClosed() {
       this.$refs.addFormRef.resetFields();
+      //清空表单
+      this.addForm = {};
     },
     addRoom() {
       this.$refs.addFormRef.validate(async (valid) => {

@@ -21,7 +21,9 @@
               <time class="time">{{ currentDate }}</time>
             </div>
           </div>
-          <el-button type="text" class="button">修改头像</el-button>
+          <div style="text-align: center">
+            <el-button type="text">修改头像</el-button>
+          </div>
         </el-card>
       </el-col>
       <el-col :span="10">
@@ -49,9 +51,9 @@
             </el-radio-group>
           </el-form-item>
         </el-form>
-        <el-button class="button" type="primary" @click="editUser"
-          >更新资料</el-button
-        >
+        <div style="text-align: center">
+          <el-button type="primary" @click="editUser">更新资料</el-button>
+        </div>
       </el-col>
     </el-card>
   </div>
@@ -104,10 +106,6 @@ export default {
 <style>
 .el-card {
   width: 100%;
-}
-.button {
-  margin-left: 50%;
-  transform: translate(-50%);
 }
 .el-col {
   align-content: center;

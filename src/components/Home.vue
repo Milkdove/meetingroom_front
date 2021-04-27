@@ -26,7 +26,7 @@
     </el-header>
     <el-container>
       <!-- 侧边栏 -->
-      <el-aside :width="isCollapse ? '64px' : '200px'">
+      <el-aside :width="isCollapse ? '60px' : '210px'">
         <div class="toggle-button" @click="toggleCollapse">|||</div>
         <el-menu
           unique-opened
@@ -97,7 +97,6 @@
         <el-main>
           <router-view />
         </el-main>
-        <el-footer>Footer</el-footer>
       </el-container>
     </el-container>
   </el-container>
